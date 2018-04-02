@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Videobutik.Models.Videofilm>
+
+@{
+    ViewBag.Title = "Orderbytitle";
+}
+
+<h2>Orderbytitle</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.titel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.speltid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.titel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.speltid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.titel }) |
+            @Html.ActionLink("Details", "Details", new { id=item.titel }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.titel })
+        </td>
+    </tr>
+}
+
+</table>
